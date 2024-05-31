@@ -157,7 +157,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SnakesAndLadders.cpp" />
+    <ClCompile Include="0-Common\0-Co-File-04-Namespaces.cpp" />
+    <ClCompile Include="0-Common\0-Co-File-05-CreateWindow.cpp" />
+    <ClCompile Include="0-Common\0-Co-File-06-CreateRenderer.cpp" />
+    <ClCompile Include="0-Common\0-Co-File-07-CreateTexture.cpp" />
+    <ClCompile Include="0-Common\0-Co-File-98-RunApplication.cpp" />
+    <ClCompile Include="0-Common\0-Co-File-99-Main.cpp" />
+    <ClCompile Include="1-Screens\1-Sc-File-02-MainScreen.cpp" />
+    <ClCompile Include="1-Screens\1-Sc-File-03-RulesScreen.cpp" />
+    <ClCompile Include="1-Screens\1-Sc-File-04-BonusScreen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="0-Common\0-Co-File-01-Header.h" />
+    <ClInclude Include="0-Common\0-Co-File-02-Structs.h" />
+    <ClInclude Include="0-Common\0-Co-File-03-Namespaces.h" />
+    <ClInclude Include="1-Screens\1-Sc-File-01-Header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

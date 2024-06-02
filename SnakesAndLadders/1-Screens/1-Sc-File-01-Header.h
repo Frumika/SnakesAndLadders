@@ -8,3 +8,7 @@ void runRulesScreen();
 void runBonusScreen();
 
 void runSettingScreen();
+
+void runSetPlayerScreen();
+
+void runGameScreen();

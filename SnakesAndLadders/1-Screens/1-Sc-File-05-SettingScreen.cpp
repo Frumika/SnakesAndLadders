@@ -357,6 +357,7 @@ void runSettingScreen()
     while (quit == false);
 
     SDL_DestroyTexture(settingBackground);
+    SDL_DestroyTexture(description);
     SDL_DestroyTexture(barPointer_1.texture);
     SDL_DestroyTexture(barPointer_2.texture);
     SDL_DestroyTexture(barPointer_3.texture);

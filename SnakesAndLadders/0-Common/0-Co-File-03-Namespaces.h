@@ -24,4 +24,5 @@ namespace AppStats
     extern int gameMode;
     extern double musicVolume;
     extern double soundVolume;
+    extern int numOfPlayers;
 }

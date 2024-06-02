@@ -32,6 +32,7 @@ namespace SDLPointers
  * 2. gameMode - Текущий уровень сложности.
  * 3. musicVolume - Громкость фоновой музыки.
  * 4. soundVolume - Громкость звуков.
+ * 5. numOfPlayers - Количество игроков в сессии.
  */
 namespace AppStats
 {
@@ -39,4 +40,5 @@ namespace AppStats
     int gameMode;
     double musicVolume;
     double soundVolume;
+    int numOfPlayers = 0;
 }

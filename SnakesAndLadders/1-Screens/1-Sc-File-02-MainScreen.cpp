@@ -1,7 +1,5 @@
 ﻿#include "1-Sc-File-01-Header.h"
-#include <iostream>
 
-using namespace std;
 
 
 /*
@@ -42,7 +40,6 @@ void runMainScreen()
                     {
                         quit = true;
                         button = 1;
-                        cout << "Начать игру" << endl;
                     }
 
                     if (event.button.x >= 213 && event.button.x <= 469
@@ -82,30 +79,32 @@ void runMainScreen()
             {
             case 1:
                 {
+                    playChunk(SDLPointers::click);
+                    runSetPlayerScreen();
                 }
                 break;
             case 2:
                 {
-                    cout << playChunk(SDLPointers::click) << endl;
+                    playChunk(SDLPointers::click);
                     runSettingScreen();
                 }
                 break;
             case 3:
                 {
-                    cout << playChunk(SDLPointers::click) << endl;
+                    playChunk(SDLPointers::click);
                     runRulesScreen();
                 }
                 break;
             case 4:
                 {
-                    cout << playChunk(SDLPointers::click) << endl;
+                    playChunk(SDLPointers::click);
                     runBonusScreen();
                 }
                 break;
                 
             default:
                 {
-                    cout << playChunk(SDLPointers::click) << endl;
+                    playChunk(SDLPointers::click);
                     SDL_Delay(500);
                 }
             }

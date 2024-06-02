@@ -6,3 +6,5 @@ void runMainScreen();
 void runRulesScreen();
 
 void runBonusScreen();
+
+void runSettingScreen();

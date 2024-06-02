@@ -21,15 +21,22 @@ namespace SDLPointers
 {
     SDL_Window* window = NULL;
     SDL_Renderer* renderer = NULL;
+    Mix_Music* music = NULL;
+    Mix_Chunk* click = NULL;
 }
 
 
 /*
  * В пространстве имен AppStats хранаятся параметры отвечающие за состояние приложения:
- * 1. exit - Была ли нажата кнопка, закрывающая приложение. По умолчанию false
- * 
+ * 1. exit - Была ли нажата кнопка, закрывающая приложение. По умолчанию false.
+ * 2. gameMode - Текущий уровень сложности.
+ * 3. musicVolume - Громкость фоновой музыки.
+ * 4. soundVolume - Громкость звуков.
  */
 namespace AppStats
 {
     bool exit = false;
+    int gameMode;
+    double musicVolume;
+    double soundVolume;
 }

@@ -15,10 +15,18 @@ void runRulesScreen()
     do
     {
         SDL_PollEvent(&event);
+        
+        if (event.type == SDL_QUIT)
+        {
+            quit = true;
+            AppStats::exit = true;
+        }
+        
         if (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)
         {
             if (event.button.x >= 213 && event.button.x <= 469 && event.button.y >= 459 && event.button.y <= 506)
             {
+                playChunk(SDLPointers::click);
                 quit = true;
             }
         }

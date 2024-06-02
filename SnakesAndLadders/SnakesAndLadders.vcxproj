@@ -166,12 +166,27 @@
     <ClCompile Include="1-Screens\1-Sc-File-02-MainScreen.cpp" />
     <ClCompile Include="1-Screens\1-Sc-File-03-RulesScreen.cpp" />
     <ClCompile Include="1-Screens\1-Sc-File-04-BonusScreen.cpp" />
+    <ClCompile Include="1-Screens\1-Sc-File-05-SettingScreen.cpp" />
+    <ClCompile Include="2-Setting\2-Se-File-02-ReadSettingList.cpp" />
+    <ClCompile Include="2-Setting\2-Se-File-03-EditSettingList.cpp" />
+    <ClCompile Include="2-Setting\2-Se-File-04-SetPointerByPosition.cpp" />
+    <ClCompile Include="3-Music\3-Mu-File-02-LoadMusic.cpp" />
+    <ClCompile Include="3-Music\3-Mu-File-03-PlayMusic.cpp" />
+    <ClCompile Include="3-Music\3-Mu-File-04-ChangeMusicVolume.cpp" />
+    <ClCompile Include="3-Music\3-Mu-File-05-LoadChunk.cpp" />
+    <ClCompile Include="3-Music\3-Mu-File-06-PlayChunk.cpp" />
+    <ClCompile Include="3-Music\3-Mu-File-07-ChangeChunkVolume.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="0-Common\0-Co-File-01-Header.h" />
     <ClInclude Include="0-Common\0-Co-File-02-Structs.h" />
     <ClInclude Include="0-Common\0-Co-File-03-Namespaces.h" />
     <ClInclude Include="1-Screens\1-Sc-File-01-Header.h" />
+    <ClInclude Include="2-Setting\2-Se-File-01-Header.h" />
+    <ClInclude Include="3-Music\3-Mu-File-01-Header.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="9-Undefined-File-01-SettingList.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

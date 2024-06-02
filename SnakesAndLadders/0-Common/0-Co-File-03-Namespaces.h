@@ -13,10 +13,15 @@ namespace SDLPointers
 {
     extern SDL_Window* window;
     extern SDL_Renderer* renderer;
+    extern Mix_Music* music;
+    extern Mix_Chunk* click;
 }
 
 
 namespace AppStats
 {
     extern bool exit;
+    extern int gameMode;
+    extern double musicVolume;
+    extern double soundVolume;
 }

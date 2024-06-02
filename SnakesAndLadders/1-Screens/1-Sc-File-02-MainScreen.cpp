@@ -50,7 +50,6 @@ void runMainScreen()
                     {
                         quit = true;
                         button = 2;
-                        cout << "Настройки" << endl;
                     }
 
                     if (event.button.x >= 213 && event.button.x <= 469
@@ -58,21 +57,21 @@ void runMainScreen()
                     {
                         quit = true;
                         button = 3;
-                    }
+                    } // Правила
 
                     if (event.button.x >= 213 && event.button.x <= 469
                         && event.button.y >= 375 && event.button.y <= 422)
                     {
                         quit = true;
                         button = 4;
-                    }
+                    } // О бонусах
 
                     if (event.button.x >= 213 && event.button.x <= 469
                         && event.button.y >= 450 && event.button.y <= 497)
                     {
                         quit = true;
                         AppStats::exit = true;
-                    }
+                    } // Выход
                 }
             }
             while (!quit);
@@ -87,18 +86,28 @@ void runMainScreen()
                 break;
             case 2:
                 {
+                    cout << playChunk(SDLPointers::click) << endl;
+                    runSettingScreen();
                 }
                 break;
             case 3:
                 {
+                    cout << playChunk(SDLPointers::click) << endl;
                     runRulesScreen();
                 }
                 break;
             case 4:
                 {
+                    cout << playChunk(SDLPointers::click) << endl;
                     runBonusScreen();
                 }
                 break;
+                
+            default:
+                {
+                    cout << playChunk(SDLPointers::click) << endl;
+                    SDL_Delay(500);
+                }
             }
         }
         while (AppStats::exit == false);

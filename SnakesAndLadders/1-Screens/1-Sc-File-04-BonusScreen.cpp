@@ -15,10 +15,18 @@ void runBonusScreen()
     do
     {
         SDL_PollEvent(&event);
+        
+        if (event.type == SDL_QUIT)
+        {
+            quit = true;
+            AppStats::exit = true;
+        }
+        
         if (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)
         {
             if (event.button.x >= 526 && event.button.x <= 783 && event.button.y >= 631 && event.button.y <= 678)
             {
+                playChunk(SDLPointers::click);
                 quit = true;
             }
         }

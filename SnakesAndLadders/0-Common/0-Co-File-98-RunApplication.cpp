@@ -3,12 +3,20 @@
 
 void runApplication()
 {
+    readSettingList();
+
     SDLPointers::window = createWindow();
     SDLPointers::renderer = createRenderer();
-    
+
+    loadMusic("FonMusic.mp3");
+    loadChunk(SDLPointers::click, "ClikChunk.mp3");
+
     runMainScreen();
+
+    editSettingList();
 
     SDL_DestroyWindow(SDLPointers::window);
     SDL_DestroyRenderer(SDLPointers::renderer);
-    SDL_Quit();
+    Mix_FreeMusic(SDLPointers::music);
+    Mix_FreeChunk(SDLPointers::click);
 }

@@ -1,6 +1,12 @@
 ﻿void converIntToChar(char* text, int value)
 {
-    if (value == 1)
+    if (value == 0)
+    {
+        text[0] = '0';
+        text[1] = '\0';
+    }
+
+    else if (value == 1)
     {
         text[0] = '1';
         text[1] = '\0';
@@ -32,6 +38,24 @@
     else if (value == 6)
     {
         text[0] = '6';
+        text[1] = '\0';
+    }
+
+    else if (value == 7)
+    {
+        text[0] = '7';
+        text[1] = '\0';
+    }
+
+    else if (value == 8)
+    {
+        text[0] = '8';
+        text[1] = '\0';
+    }
+
+    else if (value == 9)
+    {
+        text[0] = '9';
         text[1] = '\0';
     }
 }

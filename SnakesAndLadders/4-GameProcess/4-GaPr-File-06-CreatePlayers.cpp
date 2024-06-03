@@ -16,5 +16,7 @@ void createPlayers(Player* players)
         players[i].piece.position = 0;
         players[i].piece.rect = {21, 646, 43, 56};
         players[i].isDraw = false;
+
+        players[i].bonuses = new Bonus[6];
     }
 }

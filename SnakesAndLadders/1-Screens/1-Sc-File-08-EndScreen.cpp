@@ -34,4 +34,5 @@ void runEndScreen(int currentID)
     while (quit == false);
 
     SDL_DestroyTexture(bonusBackground);
+    AppStats::numOfPlayers = 0;
 }

@@ -24,3 +24,5 @@ void showNumOfCurrentPlayer(int value, int x, int y);
 int checkSnakeAndLadder(Player* player);
 
 bool checkPosition(Player* players);
+
+Player findPrevPlayer(Player* players, Player* curPlayer);

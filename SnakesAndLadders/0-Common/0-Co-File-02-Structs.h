@@ -10,6 +10,16 @@ struct SettingPointer
     bool is_add;
 };
 
+struct Bonus
+{
+    int id = 0;
+    int count = 0;
+    int position = -1;
+    bool status = false;
+    SDL_Rect rect;
+    SDL_Texture* texture;
+};
+
 struct Piece
 {
     SDL_Texture* texture;
@@ -23,5 +33,6 @@ struct Player
     int id;
     int score;
     Piece piece;
+    Bonus* bonuses;
     bool isDraw;
 };

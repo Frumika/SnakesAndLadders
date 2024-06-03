@@ -190,6 +190,11 @@
     <ClCompile Include="4-GameProcess\4-GaPr-File-08-SetCurrentPlayer.cpp" />
     <ClCompile Include="4-GameProcess\4-GaPr-File-10-ShowNumOfCurrentPlayer.cpp" />
     <ClCompile Include="4-GameProcess\4-GaPr-File-12-CheckPosition.cpp" />
+    <ClCompile Include="4-GameProcess\4-GaPr-File-13-FindPrevPlayer.cpp" />
+    <ClCompile Include="5-Bonuses\5-Bo-File-02-CreateBonus.cpp" />
+    <ClCompile Include="5-Bonuses\5-Bo-File-03-FindBounus.cpp" />
+    <ClCompile Include="5-Bonuses\5-Bo-File-04-DrawPlayerBonuses.cpp" />
+    <ClCompile Include="5-Bonuses\5-Bo-File-05-UseBonus.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="0-Common\0-Co-File-01-Header.h" />
@@ -199,6 +204,7 @@
     <ClInclude Include="2-Setting\2-Se-File-01-Header.h" />
     <ClInclude Include="3-Music\3-Mu-File-01-Header.h" />
     <ClInclude Include="4-GameProcess\4-GaPr-File-01-Header.h" />
+    <ClInclude Include="5-Bonuses\5-Bo-File-01-Header.h" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="9-Undefined-File-01-SettingList.txt" />

@@ -6,11 +6,19 @@ using namespace std;
 
 void runGameScreen()
 {
-    SDL_Texture* gameBackground = createTexture("GameBackground_4.jpg");
+    SDL_Texture* gameBackground = createTexture("GameBackground_5.jpg");
     SDL_Rect rect = {0, 0, ScreenCharacter::SCREEN_WIDTH, ScreenCharacter::SCREEN_HEIGHT};
     SDL_Event event;
 
+    int currentPlayer = 0;
+    int cubeValue = 0;
+
+    Player* players = new Player[AppStats::numOfPlayers];
+    createPlayers(players);
+
     SDL_RenderCopy(SDLPointers::renderer, gameBackground,NULL, &rect);
+
+    showAllPieces(players);
 
     SDL_RenderPresent(SDLPointers::renderer);
 
@@ -18,19 +26,53 @@ void runGameScreen()
     do
     {
         SDL_PollEvent(&event);
-        
+
         if (event.type == SDL_QUIT)
         {
             quit = true;
             AppStats::exit = true;
         }
-        
+
         if (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT)
         {
             if (event.button.x >= 873 && event.button.x <= 1130 && event.button.y >= 378 && event.button.y <= 426)
             {
                 playChunk(SDLPointers::click);
+
+                cubeValue = getRandomValue(1, 6);
+
+                for (int i = 0; i < cubeValue; i++)
+                {
+                    players[currentPlayer].piece.position += 1;
+                    cout << players[currentPlayer].piece.position << endl;
+
+                    setPieceByPosition(&players[currentPlayer]);
+
+                    SDL_RenderCopy(SDLPointers::renderer, gameBackground,NULL, &rect);
+
+                    drawCubeScore(cubeValue);
+                    showNumOfCurrentPlayer(players[currentPlayer].id);
+
+                    showAllPieces(players);
+
+                    SDL_RenderPresent(SDLPointers::renderer);
+
+                    SDL_Delay(300);
+                }
                 
+                int check = checkSnakeAndLadder(&players[currentPlayer]);
+
+                if (check == 1)
+                {
+                    SDL_RenderCopy(SDLPointers::renderer, gameBackground,NULL, &rect);
+                    showAllPieces(players);
+                    drawCubeScore(cubeValue);
+                    showNumOfCurrentPlayer(players[currentPlayer].id);
+                    
+                    SDL_RenderPresent(SDLPointers::renderer);
+                }
+
+                setCurrentPlayer(currentPlayer);
             }
 
             if (event.button.x >= 873 && event.button.x <= 1130 && event.button.y >= 443 && event.button.y <= 491)
@@ -39,6 +81,10 @@ void runGameScreen()
                 runSettingScreen();
 
                 SDL_RenderCopy(SDLPointers::renderer, gameBackground,NULL, &rect);
+
+                showAllPieces(players);
+                drawCubeScore(cubeValue);
+                showNumOfCurrentPlayer(players[currentPlayer].id);
 
                 SDL_RenderPresent(SDLPointers::renderer);
             }
@@ -49,6 +95,10 @@ void runGameScreen()
                 runBonusScreen();
 
                 SDL_RenderCopy(SDLPointers::renderer, gameBackground,NULL, &rect);
+
+                showAllPieces(players);
+                drawCubeScore(cubeValue);
+                showNumOfCurrentPlayer(players[currentPlayer].id);
 
                 SDL_RenderPresent(SDLPointers::renderer);
             }
@@ -63,4 +113,5 @@ void runGameScreen()
     while (quit == false);
 
     SDL_DestroyTexture(gameBackground);
+    delete[]players;
 }

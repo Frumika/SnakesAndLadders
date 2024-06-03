@@ -178,6 +178,16 @@
     <ClCompile Include="3-Music\3-Mu-File-05-LoadChunk.cpp" />
     <ClCompile Include="3-Music\3-Mu-File-06-PlayChunk.cpp" />
     <ClCompile Include="3-Music\3-Mu-File-07-ChangeChunkVolume.cpp" />
+    <ClCompile Include="4-GameProcess\4-GaPr-File-11-CheckSnakeAndLadder.cpp" />
+    <ClCompile Include="4-GameProcess\4-GaPr-File-09-ShowAllPieces.cpp" />
+    <ClCompile Include="4-GameProcess\4-GaPr-File-05-DrawCubeScore.cpp" />
+    <ClCompile Include="4-GameProcess\4-GaPr-File-02-GetRandomValue.cpp" />
+    <ClCompile Include="4-GameProcess\4-GaPr-File-03-CreateTextureFromText.cpp" />
+    <ClCompile Include="4-GameProcess\4-GaPr-File-04-ConvertIntToChar.cpp" />
+    <ClCompile Include="4-GameProcess\4-GaPr-File-06-CreatePlayers.cpp" />
+    <ClCompile Include="4-GameProcess\4-GaPr-File-07-SetPieceByPosition.cpp" />
+    <ClCompile Include="4-GameProcess\4-GaPr-File-08-SetCurrentPlayer.cpp" />
+    <ClCompile Include="4-GameProcess\4-GaPr-File-10-ShowNumOfCurrentPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="0-Common\0-Co-File-01-Header.h" />

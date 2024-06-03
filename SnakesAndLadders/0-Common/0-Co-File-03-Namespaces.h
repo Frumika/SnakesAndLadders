@@ -13,6 +13,7 @@ namespace SDLPointers
 {
     extern SDL_Window* window;
     extern SDL_Renderer* renderer;
+    extern TTF_Font* font;
     extern Mix_Music* music;
     extern Mix_Chunk* click;
 }
@@ -25,4 +26,5 @@ namespace AppStats
     extern double musicVolume;
     extern double soundVolume;
     extern int numOfPlayers;
+    extern  SDL_Color textColor;
 }

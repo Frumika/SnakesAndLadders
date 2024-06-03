@@ -21,6 +21,7 @@ namespace SDLPointers
 {
     SDL_Window* window = NULL;
     SDL_Renderer* renderer = NULL;
+    TTF_Font* font = NULL;
     Mix_Music* music = NULL;
     Mix_Chunk* click = NULL;
 }
@@ -33,6 +34,7 @@ namespace SDLPointers
  * 3. musicVolume - Громкость фоновой музыки.
  * 4. soundVolume - Громкость звуков.
  * 5. numOfPlayers - Количество игроков в сессии.
+ * 6. textColor - Цвет текста.
  */
 namespace AppStats
 {
@@ -41,4 +43,5 @@ namespace AppStats
     double musicVolume;
     double soundVolume;
     int numOfPlayers = 0;
+    SDL_Color textColor = {0,0,0,255};
 }

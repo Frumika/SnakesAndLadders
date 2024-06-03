@@ -7,6 +7,7 @@ void runApplication()
 
     SDLPointers::window = createWindow();
     SDLPointers::renderer = createRenderer();
+    SDLPointers::font = TTF_OpenFont("calibri.ttf", 20);
 
     loadMusic("FonMusic.mp3");
     loadChunk(SDLPointers::click, "ClikChunk.mp3");
@@ -19,4 +20,5 @@ void runApplication()
     SDL_DestroyRenderer(SDLPointers::renderer);
     Mix_FreeMusic(SDLPointers::music);
     Mix_FreeChunk(SDLPointers::click);
+    TTF_CloseFont(SDLPointers::font);
 }

@@ -19,6 +19,8 @@ void setCurrentPlayer(int& value);
 
 void showAllPieces(Player* players);
 
-void showNumOfCurrentPlayer(int value);
+void showNumOfCurrentPlayer(int value, int x, int y);
 
 int checkSnakeAndLadder(Player* player);
+
+bool checkPosition(Player* players);

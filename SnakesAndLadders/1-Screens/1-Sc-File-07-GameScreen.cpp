@@ -12,6 +12,7 @@ void runGameScreen()
 
     int currentPlayer = 0;
     int cubeValue = 0;
+    bool end = false;
 
     Player* players = new Player[AppStats::numOfPlayers];
     createPlayers(players);
@@ -43,36 +44,50 @@ void runGameScreen()
 
                 for (int i = 0; i < cubeValue; i++)
                 {
-                    players[currentPlayer].piece.position += 1;
-                    cout << players[currentPlayer].piece.position << endl;
+                    if (checkPosition(players))
+                    {
+                        players[currentPlayer].piece.position += 1;
+                        cout << players[currentPlayer].piece.position << endl;
 
-                    setPieceByPosition(&players[currentPlayer]);
+                        setPieceByPosition(&players[currentPlayer]);
 
-                    SDL_RenderCopy(SDLPointers::renderer, gameBackground,NULL, &rect);
+                        SDL_RenderCopy(SDLPointers::renderer, gameBackground,NULL, &rect);
 
-                    drawCubeScore(cubeValue);
-                    showNumOfCurrentPlayer(players[currentPlayer].id);
+                        drawCubeScore(cubeValue);
+                        showNumOfCurrentPlayer(players[currentPlayer].id, 871, 138);
 
-                    showAllPieces(players);
+                        showAllPieces(players);
 
-                    SDL_RenderPresent(SDLPointers::renderer);
+                        SDL_RenderPresent(SDLPointers::renderer);
 
-                    SDL_Delay(300);
+                        SDL_Delay(300);
+                    }
+
+                    else
+                    {
+                        SDL_Delay(300);
+                        end = true;
+                        quit = true;
+                        break;
+                    }
                 }
-                
-                int check = checkSnakeAndLadder(&players[currentPlayer]);
 
-                if (check == 1)
+                if (end == false)
                 {
-                    SDL_RenderCopy(SDLPointers::renderer, gameBackground,NULL, &rect);
-                    showAllPieces(players);
-                    drawCubeScore(cubeValue);
-                    showNumOfCurrentPlayer(players[currentPlayer].id);
-                    
-                    SDL_RenderPresent(SDLPointers::renderer);
-                }
+                    int check = checkSnakeAndLadder(&players[currentPlayer]);
 
-                setCurrentPlayer(currentPlayer);
+                    if (check == 1)
+                    {
+                        SDL_RenderCopy(SDLPointers::renderer, gameBackground,NULL, &rect);
+                        showAllPieces(players);
+                        drawCubeScore(cubeValue);
+                        showNumOfCurrentPlayer(players[currentPlayer].id, 871, 138);
+
+                        SDL_RenderPresent(SDLPointers::renderer);
+                    }
+
+                    setCurrentPlayer(currentPlayer);
+                }
             }
 
             if (event.button.x >= 873 && event.button.x <= 1130 && event.button.y >= 443 && event.button.y <= 491)
@@ -84,7 +99,7 @@ void runGameScreen()
 
                 showAllPieces(players);
                 drawCubeScore(cubeValue);
-                showNumOfCurrentPlayer(players[currentPlayer].id);
+                showNumOfCurrentPlayer(players[currentPlayer].id, 871, 138);
 
                 SDL_RenderPresent(SDLPointers::renderer);
             }
@@ -98,7 +113,7 @@ void runGameScreen()
 
                 showAllPieces(players);
                 drawCubeScore(cubeValue);
-                showNumOfCurrentPlayer(players[currentPlayer].id);
+                showNumOfCurrentPlayer(players[currentPlayer].id, 871, 138);
 
                 SDL_RenderPresent(SDLPointers::renderer);
             }
@@ -113,5 +128,8 @@ void runGameScreen()
     while (quit == false);
 
     SDL_DestroyTexture(gameBackground);
+
+    if (end == true) runEndScreen(players[currentPlayer].id);
+
     delete[]players;
 }

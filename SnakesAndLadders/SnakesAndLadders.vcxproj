@@ -169,6 +169,7 @@
     <ClCompile Include="1-Screens\1-Sc-File-05-SettingScreen.cpp" />
     <ClCompile Include="1-Screens\1-Sc-File-06-SetPlayerScreen.cpp" />
     <ClCompile Include="1-Screens\1-Sc-File-07-GameScreen.cpp" />
+    <ClCompile Include="1-Screens\1-Sc-File-08-EndScreen.cpp" />
     <ClCompile Include="2-Setting\2-Se-File-02-ReadSettingList.cpp" />
     <ClCompile Include="2-Setting\2-Se-File-03-EditSettingList.cpp" />
     <ClCompile Include="2-Setting\2-Se-File-04-SetPointerByPosition.cpp" />
@@ -188,6 +189,7 @@
     <ClCompile Include="4-GameProcess\4-GaPr-File-07-SetPieceByPosition.cpp" />
     <ClCompile Include="4-GameProcess\4-GaPr-File-08-SetCurrentPlayer.cpp" />
     <ClCompile Include="4-GameProcess\4-GaPr-File-10-ShowNumOfCurrentPlayer.cpp" />
+    <ClCompile Include="4-GameProcess\4-GaPr-File-12-CheckPosition.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="0-Common\0-Co-File-01-Header.h" />

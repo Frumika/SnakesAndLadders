@@ -12,3 +12,5 @@ void runSettingScreen();
 void runSetPlayerScreen();
 
 void runGameScreen();
+
+void runEndScreen(int currentID);
